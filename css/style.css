@@ -218,6 +218,10 @@ body {
     -webkit-background-clip: text;
     color: transparent; }
 
+.card {
+  background-color: orangered;
+  height: 50rem; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -280,3 +284,8 @@ body {
   transform: skewY(-7deg); }
   .section-features > * {
     transform: skewY(7deg); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 50rem 0;
+  margin-top: -12vh; }
