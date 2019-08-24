@@ -31,6 +31,15 @@
     900px : 56.5em
     1200px : 75em
     1800px : 112.5em 
+
+    Steps for writing Media Queries
+    1. Base
+    2. Typography
+    3. General Layout + Grid
+    4. Page specific layout
+    5. Components
+
+    @if is sass directive
 */
 @mixin respond($breakpoint){
     @if $breakpoint == phone {
