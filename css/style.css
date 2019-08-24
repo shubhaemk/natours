@@ -1,3 +1,21 @@
+/*
+    0 - 600 Phone
+    600 - 900   Tablet ( Potrait )
+    900 - 1200  Tablet ( Landscape )
+    1200 - 1800 Normal Styles
+    1800 +      Big Desktop
+
+    $breakpoint argument choices :
+    1.phone
+    2. tab-port
+    3. tab-land
+    4. big-desktop
+
+    600px : 37.5em
+    900px : 56.5em
+    1200px : 75em
+    1800px : 112.5em 
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -37,7 +55,23 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /*
+        @include respond(phone){
+            font-size: 50%;
+        }
+
+        since tab-port and phone is 50% we skip phone
+    */ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
