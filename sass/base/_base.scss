@@ -7,8 +7,33 @@
 }
 
 html{
-    //this defines what 1rem is
+    //this defines what 1rem is 10px; Default 16px so 62.5% of 16 is 10
     font-size: 62.5%;
+
+    /*
+        @include respond(phone){
+            font-size: 50%;
+        }
+
+        since tab-port and phone is 50% we skip phone
+    */
+    
+    //in case of max-width: Go larger pixels to lower
+
+    //max-width
+    @include respond(tab-land){ //width: <1200px
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25%
+    }
+
+    //max-width
+    @include respond(tab-port){ //width: 900px
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+
+    //min-width
+    @include respond(big-desktop){
+        font-size: 75%; //1rem = 12px, 12/16 = 75%
+    }
 }
 
 body {
