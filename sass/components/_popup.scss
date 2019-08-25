@@ -1,7 +1,6 @@
 .popup{
     opacity: 0;
     visibility: hidden;
-
     position: fixed;
     height: 100vh;
     width: 100%;
@@ -9,12 +8,11 @@
     left: 0;
     background-color: rgba($color-black,.8);
     z-index: 2500;
-
     transition: all .3s;
 
     &__content{
         @include absCenter;
-        width: 75%;
+        width: 85%;
         background-color: $color-white;
         box-shadow: 0 2rem 4rem rgba($color-black,.8);
         border-radius: 3px;
@@ -23,11 +21,21 @@
         opacity: 0;
         transform: translate(-50%,-50%) scale(.25);
         transition: all .4s .2s;
+        @include respond(phone){
+            width: 80%;
+            height: 80%;
+            display: block;
+        }
     }
 
     &__left {
         width: 33.33333%;
         display: table-cell;
+        @include respond(phone){
+            width: 100%;
+            height: 25%;
+            display: block;
+        }
     }
 
     &__right {
@@ -35,19 +43,32 @@
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
+
+        @include respond(phone){
+            text-align: center;
+            width: 100%;
+            height: 75%;
+            display: block;
+            padding: 2rem;
+            padding-top: 4rem;
+            padding-bottom: 1rem; 
+        }
         
     }
 
     &__img {
-        display: block;
+        display: inline-block;
         width: 100%;
+        @include respond(phone){
+            display: inline-block;
+            width: 49.5%;
+        }
     }
 
     
     &__text {
         font-size:  1.4rem;
         margin-bottom: 4rem;
-
         -moz-column-count: 2;
         -moz-column-gap: 2rem;
         -moz-column-rule: 1px solid $color-grey-light-2;
@@ -68,6 +89,33 @@
         -webkit-hyphens: auto;
         -ms-hyphens: auto;
         hyphens: auto; //can be used only if language is set to something in html
+
+        @include respond(phone){
+            text-align: start;
+            font-size:  1.3rem;
+            margin-bottom: 3rem;
+            -moz-column-count: 2;
+            -moz-column-gap: 2rem;
+            -moz-column-rule: 1px solid $color-grey-light-2;
+
+            -webkit-column-count: 2;
+            -webkit-column-gap: 2rem;
+            -webkit-column-rule: 1px solid $color-grey-light-2;
+
+            -ms-column-count: 2;
+            -ms-column-gap: 2rem;
+            -ms-column-rule: 1px solid $color-grey-light-2;
+
+            column-count: 2;
+            column-gap: 2rem;
+            column-rule: 1px solid $color-grey-light-2;
+
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto; //can be used only if language is set to something in html
+
+        }
     }
 
     &:target{
@@ -91,6 +139,17 @@
             text-decoration: none;
             display: inline-block;
             line-height: 1;
+
+            @include respond(phone){
+                text-align: center;
+                height: 4rem;
+                width: 4rem;
+                font-size: 4rem;
+                color: $color-black;
+                background-color: $color-white;
+                border-radius: 50%;
+                box-shadow: 0 1rem 3rem rgba($color-black,.8);
+            }
         }
 
         &:hover{
